@@ -3,26 +3,37 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Табити — строим дома в Перми</title>
-  <meta name="description" content="Строительство домов из автоклавного газобетона в Перми. Проектирование, строительство, инженерия и отделка. 8 лет на рынке, 40+ построенных домов." />
+  <title>Табити — строим дома в Перми и Пермском крае</title>
+  <meta name="description" content="Строительство домов из автоклавного газобетона в Перми и Пермском крае. Проектирование, строительство, инженерия и отделка. 8 лет на рынке, 40+ построенных домов." />
   <link rel="icon" href="img/logo.jpg">
   <style>
     :root{--warm:#faf6ef;--white:#fff;--light:#fafafa;--light-border:#e9edf2;--dark:#0f1217;--on-dark:#e9ecf1;--muted:#5b6678;--brand:#b8ff00;--text:#111;}
     *{box-sizing:border-box} html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;line-height:1.55;color:var(--text);background:#fff}
     img{max-width:100%;height:auto;display:block} a{color:inherit;text-decoration:none}
     .container{width:100%;max-width:1200px;margin:0 auto;padding:0 16px}
-    /* Header */
+
     header{position:sticky;top:0;z-index:60;background:#ffffffee;backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid #0001;box-shadow:0 2px 12px #0000000a}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:12px}
+    .nav-top{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:12px}
     .brand{display:inline-flex;align-items:center;gap:12px;font-weight:900}
     .brand img{height:28px;background:#fff;padding:4px;border-radius:6px;border:1px solid #00000014;box-shadow:0 2px 6px #0000000d}
-    .menu{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;align-items:center}
-    .menu a{padding:6px 10px;border-radius:8px;color:#3a4656}
-    .menu a:hover{background:#0000000a}
+    .contact-mini{display:none;color:#3a4656;font-size:14px;gap:14px;align-items:center}
+    .contact-mini a{color:#2b6be6}
+    #nav-toggle{display:none}
+    .burger{display:inline-flex;flex-direction:column;gap:4px;width:28px;height:22px;cursor:pointer}
+    .burger span{height:3px;background:#111;border-radius:2px;display:block}
+    nav.menu{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    nav.menu a{padding:6px 10px;border-radius:8px;color:#3a4656}
+    nav.menu a:hover{background:#0000000a}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.7rem 1rem;border-radius:12px;border:1px solid #0002;background:#fff;font-weight:700;cursor:pointer;transition:transform .15s,box-shadow .15s}
     .btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px #0001}
-    .btn.primary{background:var(--brand);border-color:transparent}
-    /* Hero */
+    .btn.dark{background:#111;color:#fff;border-color:#111}
+
+    @media (max-width:860px){
+      nav.menu{display:none;flex-direction:column;align-items:flex-start;background:#fff;border:1px solid #0001;border-radius:12px;box-shadow:0 10px 30px #0001;padding:10px;position:absolute;top:60px;right:16px;min-width:210px}
+      #nav-toggle:checked ~ nav.menu{display:flex}
+      .contact-mini{display:flex}
+    }
+
     .hero{background:linear-gradient(180deg,var(--warm),var(--white));padding:28px 0 16px}
     .hero-grid{display:grid;grid-template-columns:1fr;gap:16px}
     .kicker{color:#0aa3b5;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
@@ -35,40 +46,45 @@
     .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
     .stat{background:#ffffffa6;border:1px solid #00000014;border-radius:12px;padding:12px;text-align:center}
     .hero-img{border-radius:14px;overflow:hidden;border:1px solid #0001;box-shadow:0 8px 24px #0002}
-    /* Sections */
+    .hero-img img{display:block;}
+
     section{padding:28px 0}
     .section-light{background:var(--light);border-top:1px solid var(--light-border)}
     .section-head{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
     h2{font-size:24px;margin:0}
     p.lead{color:#5b6678;margin:0}
-    /* Cards */
+
     .cards{display:grid;grid-template-columns:1fr;gap:12px}
     .card{background:#fff;border:1px solid #00000012;border-radius:12px;overflow:hidden}
     .card .img-wrap{aspect-ratio:16/9}
     .card .img-wrap img{width:100%;height:100%;object-fit:cover}
     .card .content{padding:12px}
     .card h3{margin:0 0 6px 0}
-    /* Projects */
+
     .grid{display:grid;grid-template-columns:1fr;gap:12px}
     .project{background:#fff;border:1px solid #00000012;border-radius:12px;overflow:hidden}
     .project .img-wrap{width:100%;height:220px}
     .project .img-wrap img{width:100%;height:100%;object-fit:cover}
     .project .meta{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;color:#343d4a;border-top:1px solid #0001}
-    /* Built */
+
     .section-built{background:linear-gradient(180deg,var(--light),#dde3ea 40%,var(--dark) 100%);color:var(--on-dark)}
     .built-head h2{color:#000}
     .gallery{display:grid;grid-template-columns:1fr 1fr;gap:8px}
     .gallery .cell{aspect-ratio:1/1;border-radius:12px;overflow:hidden;border:1px solid #ffffff22;background:#000}
     .gallery .cell img{width:100%;height:100%;object-fit:cover}
-    /* About / Contacts */
+
     .section-dark{background:var(--dark);color:var(--on-dark)}
     .about-grid{display:grid;grid-template-columns:1fr;gap:12px;align-items:start}
     form{display:grid;grid-template-columns:1fr;gap:10px}
     input,select,textarea{width:100%;background:#fff;border:1px solid #00000018;border-radius:10px;padding:12px;color:#111}
     textarea{min-height:120px;resize:vertical}
+
     footer{color:#c3cad6}
     footer .cols{display:grid;grid-template-columns:1fr;gap:12px}
-    /* Breakpoints */
+
+    .socials{display:flex;gap:12px;align-items:center}
+    .socials a svg{width:22px;height:22px;display:block}
+
     @media (min-width:430px){ .title{font-size:36px} }
     @media (min-width:640px){ .hero-ctas{grid-template-columns:auto auto} .gallery{grid-template-columns:1fr 1fr 1fr} }
     @media (min-width:900px){
@@ -81,31 +97,43 @@
 </head>
 <body id="top">
   <header>
-    <div class="container nav">
+    <div class="container nav-top">
       <a class="brand" href="#top" aria-label="На главную">
         <img src="img/logo.jpg" alt="Логотип Табити"><span>TABITI</span>
       </a>
+      <div class="contact-mini">
+        <a href="tel:+79026390797">+7 902 639 07 97</a>
+        <a href="mailto:aslauta@gmail.com">aslauta@gmail.com</a>
+        <label for="nav-toggle" class="burger" aria-label="Меню"><span></span><span></span><span></span></label>
+      </div>
+      <input type="checkbox" id="nav-toggle" />
       <nav class="menu">
         <a href="#projects">Проекты</a>
         <a href="#services">Услуги</a>
         <a href="#about">Компания</a>
         <a href="#built">Построено</a>
-        <!-- Ипотека удалена -->
         <a href="#contacts">Контакты</a>
-        <a class="btn" style="background:#111;color:#fff;border-color:#111" href="https://t.me/tabiti_perm" target="_blank" rel="noopener">Telegram</a>
+        <a class="btn dark" href="https://t.me/tabiti_perm" target="_blank" rel="noopener">Telegram</a>
+        <div class="socials" style="padding:6px 4px 2px">
+          <a href="https://t.me/tabiti_perm" target="_blank" aria-label="Telegram">
+            <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="120" fill="#2AABEE"/><path fill="#fff" d="M177 68L49 117c-9 4-9 11-2 13l32 10 12 39c1 3 0 4 3 4 2 0 3-1 5-3l13-12 36 27c7 4 12 2 14-7l26-122c2-9-3-13-11-10z"/></svg>
+          </a>
+          <a href="https://vk.com/tabitigroup" target="_blank" aria-label="VK">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="8" fill="#4C75A3"/><path fill="#fff" d="M25.7 31.5c-8.2 0-12.9-5.7-13-15.5h4.3c.1 7 3.2 10 5.6 10.6V16h4v8.2c2.3-.3 4.8-3.1 5.6-8.2h4.1c-.6 3.7-2.2 6.5-4.4 8.4c-1.2 1-1 1.5 0 2.5c1.3 1.3 2.9 3 3.4 5H31c-.6-1.8-2.2-3.5-3.5-4.9l-1.8-.7v5.6h0Z"/></svg>
+          </a>
+        </div>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="kicker">в Перми</div>
+        <div class="kicker">В Перми и Пермском крае</div>
         <div class="brand-left"><img src="img/logo.jpg" alt="Табити — логотип"><div class="tag">Лучшее для вашего дома</div></div>
         <h1 class="title">Проектируем и строим современные дома «под ключ»</h1>
         <p class="subtitle">Строительство из автоклавного газобетона. Работаем с ипотекой и маткапиталом. Официальное сопровождение до регистрации в Росреестре.</p>
-        <div class="hero-ctas"><a class="btn primary" href="#calc">Рассчитать стоимость</a><a class="btn" href="#projects">Смотреть проекты</a></div>
+        <div class="hero-ctas"><a class="btn" style="background:var(--brand);border-color:transparent" href="#calc">Рассчитать стоимость</a><a class="btn" href="#projects">Смотреть проекты</a></div>
         <div class="stats">
           <div class="stat"><b>40+</b><br/><span class="muted">домов построено</span></div>
           <div class="stat"><b>8 лет</b><br/><span class="muted">на рынке</span></div>
@@ -116,7 +144,6 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
   <section id="services" class="section-light">
     <div class="container">
       <div class="section-head"><h2>Наши услуги</h2><p class="lead">От проектирования до инженерии. Всё — у одного подрядчика.</p></div>
@@ -129,7 +156,6 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects" class="section-light">
     <div class="container">
       <div class="section-head"><h2>Популярные проекты домов</h2></div>
@@ -141,7 +167,6 @@
     </div>
   </section>
 
-  <!-- BUILT -->
   <section id="built" class="section-built">
     <div class="container">
       <div class="section-head built-head"><h2>Наши реализованные проекты</h2><p class="lead">Дома, которыми гордимся</p></div>
@@ -159,7 +184,6 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about" class="section-dark">
     <div class="container">
       <div class="section-head"><h2>О компании «Табити»</h2><p class="lead" style="color:#b9c3d4">Надёжный партнёр в строительстве дома мечты</p></div>
@@ -174,15 +198,21 @@
     </div>
   </section>
 
-  <!-- CONTACTS -->
   <section id="contacts" class="section-dark">
     <div class="container">
-      <div class="section-head"><h2>Контакты</h2><p class="lead" style="color:#b9c3d4">Пермь</p></div>
+      <div class="section-head"><h2>Контакты</h2><p class="lead" style="color:#b9c3d4">Пермь и Пермский край</p></div>
+      <div class="socials" style="margin:0 0 14px 0">
+        <a href="tel:+79026390797">📞 +7 902 639 07 97</a>
+        <a href="mailto:aslauta@gmail.com">✉️ aslauta@gmail.com</a>
+      </div>
       <form onsubmit="event.preventDefault(); alert('Заявка отправлена (демо)')">
         <input required placeholder="Ваше имя" />
         <input required type="tel" placeholder="Телефон" />
-        <input type="email" placeholder="E‑mail (необязательно)" />
-        <select><option>Регион строительства</option><option selected>Пермь / Пермский край</option><option>Другой</option></select>
+        <input required type="email" placeholder="E‑mail" />
+        <select required>
+          <option selected>Пермь / Пермский край</option>
+          <option>Другой</option>
+        </select>
         <textarea placeholder="Кратко опишите задачу"></textarea>
         <button class="btn" style="background:#b8ff00;border-color:#b8ff00" type="submit">Отправить заявку</button>
       </form>
@@ -194,10 +224,18 @@
       <div style="display:flex;align-items:center;gap:12px;font-weight:900;margin-bottom:6px">
         <img src="img/logo.jpg" alt="Табити" style="height:26px;border-radius:4px;background:#fff;padding:4px;border:1px solid #ffffff22"> TABITI
       </div>
-      <p style="color:#9fb0c9">© 2025. Прототип для предварительного просмотра.</p>
-      <div class="menu" style="gap:8px">
-        <a href="https://t.me/tabiti_perm" target="_blank" rel="noopener">🟢 Telegram</a>
-        <a href="https://vk.com/tabitigroup" target="_blank" rel="noopener">🔵 VK</a>
+      <div class="socials" style="margin:6px 0 10px">
+        <a href="https://t.me/tabiti_perm" target="_blank" aria-label="Telegram">
+          <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="120" r="120" fill="#2AABEE"/><path fill="#fff" d="M177 68L49 117c-9 4-9 11-2 13l32 10 12 39c1 3 0 4 3 4 2 0 3-1 5-3l13-12 36 27c7 4 12 2 14-7l26-122c2-9-3-13-11-10z"/></svg>
+        </a>
+        <a href="https://vk.com/tabitigroup" target="_blank" aria-label="VK">
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="8" fill="#4C75A3"/><path fill="#fff" d="M25.7 31.5c-8.2 0-12.9-5.7-13-15.5h4.3c.1 7 3.2 10 5.6 10.6V16h4v8.2c2.3-.3 4.8-3.1 5.6-8.2h4.1c-.6 3.7-2.2 6.5-4.4 8.4c-1.2 1-1 1.5 0 2.5c1.3 1.3 2.9 3 3.4 5H31c-.6-1.8-2.2-3.5-3.5-4.9l-1.8-.7v5.6h0Z"/></svg>
+        </a>
+      </div>
+      <div style="color:#9fb0c9">
+        ИП Толстикова Елена Сергеевна<br/>
+        ОГРН 315595800006273<br/>
+        ИНН 592102562155
       </div>
     </div>
   </footer>
