@@ -2,79 +2,119 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Табити — строим дома в Перми</title>
   <meta name="description" content="Строительство домов из автоклавного газобетона в Перми. Проектирование, строительство, инженерия и отделка. 8 лет на рынке, 40+ построенных домов." />
   <link rel="icon" href="img/logo.jpg">
   <style>
-    :root{ --warm:#faf6ef; --white:#ffffff; --light:#fafafa; --light-border:#e9edf2; --dark:#0f1217; --on-dark:#e9ecf1; --muted:#5b6678; --brand:#b8ff00; }
-    *{box-sizing:border-box} html,body{margin:0;padding:0;font:16px/1.55 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial}
-    a{color:inherit;text-decoration:none} img{max-width:100%;display:block} .container{width:min(1200px,92vw);margin-inline:auto}
-    .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.15rem;border-radius:.9rem;border:1px solid #00000020;background:#ffffff;color:#111;font-weight:700;cursor:pointer;transition:.15s transform,.2s box-shadow}
-    .btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px #00000014} .btn.primary{background:var(--brand);border-color:transparent}
-    header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.75);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid #00000010}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0} .menu{display:flex;gap:1rem;align-items:center}
-    .menu a{padding:.55rem .8rem;border-radius:.7rem;color:#3a4656} .menu a:hover{background:#00000008}
-    .hero{background:linear-gradient(180deg, var(--warm) 0%, var(--white) 100%);color:#1a1f27;padding:clamp(1.8rem,6vw,5rem) 0 2rem}
-    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
-    .kicker{color:#0aa3b5;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem}
-    .title{font-size:clamp(2rem,6vw,3.3rem);line-height:1.06;margin:.35rem 0 .8rem;font-weight:900}
-    .subtitle{color:#445066;max-width:62ch}
-    .brand-left{display:flex;align-items:center;gap:.9rem;margin:.4rem 0 1rem}
-    .brand-left img{height:52px;filter:drop-shadow(0 6px 16px rgba(0,0,0,.12))}
-    .brand-left .tag{font-size:1.0rem;color:#6b7280}
-    .hero-ctas{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.2rem}
-    .stat{background:#ffffffa0;border:1px solid #00000014;border-radius:1rem;padding:1rem} .stat b{font-size:1.35rem}
-    .hero-img{border-radius:1rem;overflow:hidden;border:1px solid #00000014;box-shadow:0 10px 30px #00000020}
-    section{padding:clamp(2rem,6vw,4rem) 0}
+    /* ====== BASE ====== */
+    :root{--warm:#faf6ef;--white:#fff;--light:#fafafa;--light-border:#e9edf2;--dark:#0f1217;--on-dark:#e9ecf1;--muted:#5b6678;--brand:#b8ff00;--text:#111;}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;line-height:1.55;color:var(--text);background:#fff}
+    img{max-width:100%;height:auto;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{width:100%;max-width:1200px;margin:0 auto;padding:0 16px}
+
+    /* ====== HEADER ====== */
+    header{position:sticky;top:0;z-index:60;background:#ffffffcc;backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid #0001}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:12px}
+    .brand{display:flex;align-items:center;gap:8px;font-weight:900}
+    .brand img{height:28px}
+    .menu{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;align-items:center}
+    .menu a{padding:6px 10px;border-radius:8px;color:#3a4656}
+    .menu a:hover{background:#0000000a}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.9rem 1.1rem;border-radius:12px;border:1px solid #0002;background:#fff;font-weight:700;cursor:pointer;transition:transform .15s,box-shadow .15s}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px #0001}
+    .btn.primary{background:var(--brand);border-color:transparent}
+
+    /* ====== HERO (mobile-first) ====== */
+    .hero{background:linear-gradient(180deg,var(--warm),var(--white));padding:28px 0 16px}
+    .hero-grid{display:grid;grid-template-columns:1fr;gap:16px}
+    .kicker{color:#0aa3b5;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+    .brand-left{display:flex;align-items:center;gap:10px;margin:8px 0 10px}
+    .brand-left img{height:50px;border-radius:8px;box-shadow:0 6px 16px #0002}
+    .brand-left .tag{color:#6b7280;font-size:14px}
+    .title{font-size:32px;line-height:1.12;margin:6px 0 10px;font-weight:900}
+    .subtitle{color:#445066;margin-bottom:12px}
+    .hero-ctas{display:grid;grid-template-columns:1fr;gap:10px;margin:12px 0}
+    .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+    .stat{background:#ffffffa6;border:1px solid #00000014;border-radius:12px;padding:12px;text-align:center}
+    .hero-img{border-radius:14px;overflow:hidden;border:1px solid #0001;box-shadow:0 8px 24px #0002}
+
+    /* ====== SECTIONS ====== */
+    section{padding:28px 0}
     .section-light{background:var(--light);border-top:1px solid var(--light-border)}
-    .section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:1.2rem;gap:1rem}
-    h2{font-size:clamp(1.6rem,4.5vw,2.2rem);margin:0} p.lead{color:#5b6678;margin:0}
-    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-    .card{background:#fff;border:1px solid #00000012;border-radius:1rem;overflow:hidden;display:flex;flex-direction:column}
-    .card .img-wrap{aspect-ratio:16/9;overflow:hidden}
+    .section-head{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+    h2{font-size:24px;margin:0}
+    p.lead{color:#5b6678;margin:0}
+
+    /* ====== CARDS ====== */
+    .cards{display:grid;grid-template-columns:1fr;gap:12px}
+    .card{background:#fff;border:1px solid #00000012;border-radius:12px;overflow:hidden}
+    .card .img-wrap{aspect-ratio:16/9}
     .card .img-wrap img{width:100%;height:100%;object-fit:cover}
-    .card .content{padding:1rem}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-    .project{display:flex;flex-direction:column;background:#fff;border:1px solid #00000012;border-radius:1rem;overflow:hidden}
-    .project .img-wrap{width:100%;height:300px}
+    .card .content{padding:12px}
+    .card h3{margin:0 0 6px 0}
+
+    /* ====== PROJECTS ====== */
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    .project{background:#fff;border:1px solid #00000012;border-radius:12px;overflow:hidden}
+    .project .img-wrap{width:100%;height:220px}
     .project .img-wrap img{width:100%;height:100%;object-fit:cover}
-    .project .meta{display:flex;justify-content:space-between;align-items:center;color:#343d4a;padding:.9rem 1rem;border-top:1px solid #00000012;min-height:56px}
-    .section-built{background:linear-gradient(180deg, var(--light), #dde3ea 40%, var(--dark) 100%); color:var(--on-dark)}
+    .project .meta{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;color:#343d4a;border-top:1px solid #0001}
+
+    /* ====== BUILT ====== */
+    .section-built{background:linear-gradient(180deg,var(--light),#dde3ea 40%,var(--dark) 100%);color:var(--on-dark)}
     .built-head h2{color:#000}
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-    .gallery .cell{width:100%;aspect-ratio:1/1;border-radius:1rem;overflow:hidden;border:1px solid #ffffff22;background:#000}
+    .gallery{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .gallery .cell{aspect-ratio:1/1;border-radius:12px;overflow:hidden;border:1px solid #ffffff22;background:#000}
     .gallery .cell img{width:100%;height:100%;object-fit:cover}
+
+    /* ====== ABOUT / CONTACTS ====== */
     .section-dark{background:var(--dark);color:var(--on-dark)}
-    /* revert about header alignment to default */
-    /* removed special padding/centering */
-    form{display:grid;grid-template-columns:1fr 1fr;gap:1rem} input,select,textarea{width:100%;background:#fff;border:1px solid #00000018;border-radius:.6rem;padding:.9rem;color:#111} textarea{grid-column:1 / -1;min-height:120px;resize:vertical}
-    footer{color:#c3cad6} footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1rem}
-    .social{display:flex;gap:.6rem;margin-top:.6rem} .social a{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .7rem;border:1px solid #ffffff22;border-radius:.6rem}
-    @media (max-width:1024px){.project .img-wrap{height:260px}}
-    @media (max-width:960px){
-      .hero-grid{grid-template-columns:1fr}
+    .about-grid{display:grid;grid-template-columns:1fr;gap:12px;align-items:start}
+    form{display:grid;grid-template-columns:1fr;gap:10px}
+    input,select,textarea{width:100%;background:#fff;border:1px solid #00000018;border-radius:10px;padding:12px;color:#111}
+    textarea{min-height:120px;resize:vertical}
+
+    footer{color:#c3cad6}
+    footer .cols{display:grid;grid-template-columns:1fr;gap:12px}
+
+    /* ====== Breakpoints tuned for iPhone 15 / 15 Pro Max ====== */
+    /* iPhone 15: 393px; Pro Max: 430px -> оба попадают в mobile-first (1 колонка). */
+    @media (min-width:430px){
+      .title{font-size:36px}
+    }
+    @media (min-width:640px){
+      .hero-ctas{grid-template-columns:auto auto}
+      .gallery{grid-template-columns:1fr 1fr 1fr}
+    }
+    @media (min-width:900px){
+      .hero{padding:48px 0 28px}
+      .title{font-size:44px}
+      .hero-grid{grid-template-columns:1.1fr .9fr;gap:24px}
+      .stats{grid-template-columns:repeat(3,1fr)}
       .cards{grid-template-columns:repeat(2,1fr)}
       .grid{grid-template-columns:repeat(2,1fr)}
-      .gallery{grid-template-columns:repeat(2,1fr)}
-      form{grid-template-columns:1fr}
+      .about-grid{grid-template-columns:1.2fr .8fr}
+      footer .cols{grid-template-columns:2fr 1fr 1fr}
+      .project .img-wrap{height:260px}
     }
-    @media (max-width:720px){
-      .cards,.grid,.gallery{grid-template-columns:1fr}
-      .project .img-wrap{height:220px}
+    @media (min-width:1100px){
+      .cards{grid-template-columns:repeat(4,1fr)}
+      .grid{grid-template-columns:repeat(3,1fr)}
+      .project .img-wrap{height:300px}
     }
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
-      <div style="display:flex;align-items:center;gap:.6rem;font-weight:900">TABITI</div>
-      <nav class="menu" aria-label="Главное меню">
+      <div class="brand"><img src="img/logo.jpg" alt="Табити"> TABITI</div>
+      <nav class="menu">
         <a href="#projects">Проекты</a><a href="#services">Услуги</a><a href="#about">Компания</a><a href="#built">Построено</a><a href="#mortgage">Ипотека</a><a href="#contacts">Контакты</a>
-        <a class="btn" style="background:#111;color:#fff;border-color:#111" href="https://t.me/tabiti_perm" target="_blank" rel="noopener">В наш Telegram</a>
+        <a class="btn" style="background:#111;color:#fff;border-color:#111" href="https://t.me/tabiti_perm" target="_blank" rel="noopener">Telegram</a>
       </nav>
-      <div class="phone"><a href="tel:+79026390797">+7 902 639 07 97</a></div>
     </div>
   </header>
 
@@ -83,52 +123,29 @@
     <div class="container hero-grid">
       <div>
         <div class="kicker">в Перми</div>
-        <div class="brand-left">
-          <img src="img/logo.jpg" alt="Табити — логотип">
-          <div class="tag">Лучшее для вашего дома</div>
-        </div>
+        <div class="brand-left"><img src="img/logo.jpg" alt="Табити — логотип"><div class="tag">Лучшее для вашего дома</div></div>
         <h1 class="title">Проектируем и строим современные дома «под ключ»</h1>
         <p class="subtitle">Строительство из автоклавного газобетона. Работаем с ипотекой и маткапиталом. Официальное сопровождение до регистрации в Росреестре.</p>
-        <div class="hero-ctas">
-          <a class="btn primary" href="#calc">Рассчитать стоимость</a>
-          <a class="btn" href="#projects">Смотреть проекты</a>
-        </div>
+        <div class="hero-ctas"><a class="btn primary" href="#calc">Рассчитать стоимость</a><a class="btn" href="#projects">Смотреть проекты</a></div>
         <div class="stats">
           <div class="stat"><b>40+</b><br/><span class="muted">домов построено</span></div>
           <div class="stat"><b>8 лет</b><br/><span class="muted">на рынке</span></div>
           <div class="stat"><b>4</b><br/><span class="muted">объекта в работе</span></div>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="img/hero.jpg" alt="Современный одноэтажный дом — Табити" />
-      </div>
+      <div class="hero-img"><img src="img/hero.jpg" alt="Современный одноэтажный дом — Табити" /></div>
     </div>
   </section>
 
   <!-- SERVICES -->
   <section id="services" class="section-light">
     <div class="container">
-      <div class="section-head">
-        <h2>Наши услуги</h2>
-        <p class="lead">От проектирования до инженерии. Всё — у одного подрядчика.</p>
-      </div>
+      <div class="section-head"><h2>Наши услуги</h2><p class="lead">От проектирования до инженерии. Всё — у одного подрядчика.</p></div>
       <div class="cards">
-        <article class="card focus-left">
-          <div class="img-wrap"><img src="img/service-proj.jpg" alt="Проектирование (логотип в кадре)" /></div>
-          <div class="content"><h3>Проектирование</h3><p class="muted">Рабочая документация, сметы, согласования.</p></div>
-        </article>
-        <article class="card">
-          <div class="img-wrap"><img src="img/service-build.jpg" alt="Строительство — кладка и кровля" /></div>
-          <div class="content"><h3>Строительство</h3><p class="muted">Газобетон, фундаменты, перекрытия и кровля.</p></div>
-        </article>
-        <article class="card">
-          <div class="img-wrap"><img src="img/service-engineer.jpg" alt="Инженерные системы — фундамент, коммуникации" /></div>
-          <div class="content"><h3>Инженерные системы</h3><p class="muted">Отопление, вентиляция, водоснабжение, электрика.</p></div>
-        </article>
-        <article class="card">
-          <div class="img-wrap"><img src="img/service-design.jpg" alt="Отделка — большая комната с дверью в пол" /></div>
-          <div class="content"><h3>Отделка и комплектация</h3><p class="muted">Чистовая отделка и комплектация под ключ.</p></div>
-        </article>
+        <article class="card"><div class="img-wrap"><img src="img/service-proj.jpg" alt="Проектирование (логотип в кадре)" /></div><div class="content"><h3>Проектирование</h3><p class="muted">Рабочая документация, сметы, согласования.</p></div></article>
+        <article class="card"><div class="img-wrap"><img src="img/service-build.jpg" alt="Строительство — кладка и кровля" /></div><div class="content"><h3>Строительство</h3><p class="muted">Газобетон, фундаменты, перекрытия и кровля.</p></div></article>
+        <article class="card"><div class="img-wrap"><img src="img/service-engineer.jpg" alt="Инженерные системы — фундамент, коммуникации" /></div><div class="content"><h3>Инженерные системы</h3><p class="muted">Отопление, вентиляция, водоснабжение, электрика.</p></div></article>
+        <article class="card"><div class="img-wrap"><img src="img/service-design.jpg" alt="Отделка — большая комната с дверью в пол" /></div><div class="content"><h3>Отделка и комплектация</h3><p class="muted">Чистовая отделка и комплектация под ключ.</p></div></article>
       </div>
     </div>
   </section>
@@ -166,17 +183,14 @@
   <!-- ABOUT -->
   <section id="about" class="section-dark">
     <div class="container">
-      <div class="section-head">
-        <h2>О компании «Табити»</h2>
-        <p class="lead" style="color:#b9c3d4">Надёжный партнёр в строительстве дома мечты</p>
-      </div>
-      <div style="display:grid;grid-template-columns:1.2fr .8fr;gap:1rem;align-items:start">
+      <div class="section-head"><h2>О компании «Табити»</h2><p class="lead" style="color:#b9c3d4">Надёжный партнёр в строительстве дома мечты</p></div>
+      <div class="about-grid">
         <div>
           <p style="color:#cbd6e5">В стремлении реализовать мечты о собственном доме, компания Табити предлагает комплексные строительные решения с акцентом на доступность и удобство для каждого клиента. Мы гордимся тем, что работаем с ипотекой и материнским капиталом, облегчая путь к владению домом для семей на любом этапе их жизненного пути.</p>
           <p style="color:#cbd6e5">Наши услуги включают не только строительство домов «под ключ», но и полный спектр поддержки после строительства, включая электрификацию и официальную регистрацию в Росреестре, обеспечивая вам спокойствие и уверенность в законности вашего нового дома. Будучи аккредитованными в ведущих банках‑партнёрах, мы предлагаем выгодные ипотечные программы, которые делают строительство дома доступным и удобным.</p>
           <p style="color:#cbd6e5">Мы стремимся к тому, чтобы каждый мог обрести дом своей мечты. Доверяя нам, вы выбираете надёжного партнёра на пути к осуществлению своих желаний.</p>
         </div>
-        <div><img src="img/about.jpg" alt="Руководитель на объекте (бетономешалка)" style="border-radius:1rem;border:1px solid #ffffff22;"/></div>
+        <div><img src="img/about.jpg" alt="Руководитель на объекте (бетономешалка)" style="border-radius:12px;border:1px solid #ffffff22"/></div>
       </div>
     </div>
   </section>
@@ -196,20 +210,16 @@
     </div>
   </section>
 
-  <footer class="section-dark" style="padding:2rem 0;border-top:1px solid #ffffff22">
+  <footer class="section-dark" style="padding:20px 0;border-top:1px solid #ffffff22">
     <div class="container cols">
-      <div>
-        <div style="font-weight:900;margin-bottom:.4rem;display:flex;align-items:center;gap:.5rem">
-          <img src="img/logo.jpg" alt="Табити" style="height:28px;border-radius:.3rem"> TABITI
-        </div>
-        <p style="color:#9fb0c9">© 2025. Прототип для предварительного просмотра.</p>
-        <div class="social">
-          <a href="https://t.me/tabiti_perm" target="_blank" rel="noopener">🟢 Telegram</a>
-          <a href="https://vk.com/tabitigroup" target="_blank" rel="noopener">🔵 VK</a>
-        </div>
+      <div style="display:flex;align-items:center;gap:10px;font-weight:900;margin-bottom:6px">
+        <img src="img/logo.jpg" alt="Табити" style="height:26px;border-radius:4px"> TABITI
       </div>
-      <div><b>Навигация</b><div style="margin-top:.6rem;display:grid;gap:.4rem"><a href="#projects">Проекты</a><a href="#services">Услуги</a><a href="#about">Компания</a><a href="#contacts">Контакты</a></div></div>
-      <div><b>Контакты</b><div style="margin-top:.6rem;display:grid;gap:.4rem"><a href="tel:+79026390797">+7 902 639 07 97</a><a href="mailto:aslauta@gmail.com">aslauta@gmail.com</a></div></div>
+      <p style="color:#9fb0c9">© 2025. Прототип для предварительного просмотра.</p>
+      <div class="menu" style="gap:8px">
+        <a href="https://t.me/tabiti_perm" target="_blank" rel="noopener">🟢 Telegram</a>
+        <a href="https://vk.com/tabitigroup" target="_blank" rel="noopener">🔵 VK</a>
+      </div>
     </div>
   </footer>
 </body>
