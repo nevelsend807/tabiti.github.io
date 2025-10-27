@@ -1,14 +1,1 @@
-
-// mobile menu
-const burger = document.getElementById('burger');
-const mnav = document.getElementById('mnav');
-const closeBtn = document.getElementById('mnavClose');
-
-function openMenu(){ mnav.hidden = false; burger.setAttribute('aria-expanded','true'); }
-function closeMenu(){ mnav.hidden = true; burger.setAttribute('aria-expanded','false'); }
-
-burger?.addEventListener('click', () => {
-  if (mnav.hidden) openMenu(); else closeMenu();
-});
-document.getElementById('mnavClose')?.addEventListener('click', closeMenu);
-mnav?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+const burger=document.getElementById('burger');const drawer=document.getElementById('menuDrawer');const backdrop=document.getElementById('backdrop');const drawerClose=document.getElementById('drawerClose');function openDrawer(){drawer.classList.add('open');burger.setAttribute('aria-expanded','true');drawer.setAttribute('aria-hidden','false');backdrop.hidden=false;}function closeDrawer(){drawer.classList.remove('open');burger.setAttribute('aria-expanded','false');drawer.setAttribute('aria-hidden','true');backdrop.hidden=true;}if(burger){burger.addEventListener('click',openDrawer)}if(drawerClose){drawerClose.addEventListener('click',closeDrawer)}if(backdrop){backdrop.addEventListener('click',closeDrawer)}document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id.length>1){e.preventDefault();closeDrawer();document.querySelector(id)?.scrollIntoView({behavior:'smooth',block:'start'})}})});const form=document.getElementById('leadForm');if(form){form.addEventListener('submit',e=>{e.preventDefault();const d=Object.fromEntries(new FormData(form).entries());alert('Заявка отправлена!\n\nИмя: '+d.name+'\nEmail: '+d.email+'\nТелефон: '+d.phone+'\nРегион: '+d.region);form.reset();});}
