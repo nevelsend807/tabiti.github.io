@@ -1,166 +1,127 @@
+
 <!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Проектируем и строим современные дома «под ключ» — Пермь и Пермский край</title>
-  <meta name="description" content="Строительство домов из автоклавного газобетона в Перми и Пермском крае. Проектирование, фундамент, кровля, инженерия, отделка. 8 лет на рынке, 40+ домов.">
-  <style>
-    :root{--warm:#f6f0e6;--brand:#b8ff00;--text:#0f1217;--muted:#5a6576}
-    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:var(--text);background:#fff}
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .container{max-width:1180px;margin:0 auto;padding:0 16px}
-    .header{position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 2px 12px #0001}
-    .head-row{display:flex;align-items:center;gap:12px;justify-content:space-between;padding:10px 8px}
-    .brand img{width:42px;height:42px}
-    .contacts{display:flex;align-items:center;gap:10px}
-    .contacts .tel{font-weight:800;white-space:nowrap}
-    .contacts .tg{padding:6px 10px;border:1px solid #0002;border-radius:20px}
-    #nav-toggle{display:none}
-    .burger{display:inline-flex;width:40px;height:38px;border-radius:10px;border:1px solid #0002;align-items:center;justify-content:center}
-    .burger span,.burger:before,.burger:after{content:"";display:block;width:16px;height:2px;background:#222;border-radius:2px}
-    .burger:before{position:relative;top:-4px} .burger:after{position:relative;bottom:-4px}
-    nav.menu{display:none;position:fixed;inset:0;background:#fff;z-index:1200;overflow:auto}
-    #nav-toggle:checked ~ nav.menu{display:block}
-    nav.menu .mhead{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid #0001}
-    nav.menu a{display:block;padding:16px;border-bottom:1px solid #00000010}
-    @media(max-width:480px){ .head-row{gap:8px} .contacts .tel{font-size:14px} .contacts .tg{font-size:14px;padding:6px 8px} }
-    .hero{background:linear-gradient(180deg,var(--warm),#fff);padding:18px 0 24px}
-    .kicker{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-    .kicker span{color:#0a9; font-weight:900; letter-spacing:.08em; text-transform:uppercase; font-size:12px}
-    .slogan{color:#6b7788;margin:0 0 6px 0}
-    .hero-grid{display:grid;gap:16px}
-    .hero h1{font-size:32px;line-height:1.14;margin:8px 0 12px}
-    .hero-img{border-radius:14px;overflow:hidden;border:1px solid #0001;box-shadow:0 8px 24px #0002}
-    @media(min-width:900px){ .hero h1{font-size:44px} .hero-grid{grid-template-columns:1.05fr .95fr;align-items:start} }
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{padding:14px 18px;border-radius:14px;border:1px solid #0002;font-weight:800}
-    .btn-primary{background:var(--brand)}
-    .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
-    .card{border:1px solid #0001;border-radius:14px;padding:18px;text-align:center;background:#fff}
-    .card strong{font-size:18px}
-    @media(min-width:700px){ .stats{grid-template-columns:repeat(3,1fr)} }
-    section{padding:26px 0}
-    .section-head{margin-bottom:10px}
-    .section-head h2{margin:0;font-size:24px}
-    .lead{color:#5a6576;margin:4px 0 0 0}
-    .grid{display:grid;gap:12px}
-    .grid.three{grid-template-columns:1fr}
-    @media(min-width:900px){ .grid.three{grid-template-columns:repeat(3,1fr)} }
-    .project,.service{background:#fff;border:1px solid #0001;border-radius:14px;overflow:hidden}
-    .project .img,.service .img{height:220px}
-    .project .img img,.service .img img{width:100%;height:100%;object-fit:cover}
-    .meta{display:flex;justify-content:space-between;padding:12px;border-top:1px solid #0001;color:#374357;align-items:center}
-    form{display:grid;gap:10px}
-    input,textarea,select{padding:12px;border:1px solid #0002;border-radius:10px}
-    textarea{min-height:120px}
-    footer{padding:20px 0;border-top:1px solid #0002;color:#647083}
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ТАБИТИ — Проектируем и строим современные дома «под ключ»</title>
+  <meta name="description" content="ТАБИТИ — строительство современных домов под ключ в Перми и Пермском крае. Газобетон, фундаменты, кровля, инженерные системы, отделка. Работаем с ипотекой и маткапиталом.">
+  <link rel="preload" as="image" href="img/logo.jpg">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="header">
-  <div class="container head-row">
-    <div class="brand"><a href="#top"><img src="img/logo.jpg" alt="ТАБИТИ"></a></div>
-    <div class="contacts">
-      <a class="tel" href="tel:+79026390797">+7 902 639 07 97</a>
-      <a class="tg" href="https://t.me/tabiti_perm" target="_blank">Telegram</a>
-      <label for="nav-toggle" class="burger" aria-label="Меню"><span></span></label>
+  <div class="container header__row">
+    <a href="#top" class="logo" aria-label="На главную">
+      <img src="img/logo.jpg" alt="ТАБИТИ логотип">
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#projects" class="nav__link">Проекты</a>
+      <a href="#built" class="nav__link">Построено</a>
+      <a href="#services" class="nav__link">Услуги</a>
+      <a href="#contacts" class="nav__link">Контакты</a>
+    </nav>
+    <div class="header__actions">
+      <a class="icon-btn" href="tel:+79026390797" aria-label="Позвонить"><img src="svg/phone.svg" alt=""></a>
+      <a class="icon-btn" href="https://t.me/tabiti_perm" target="_blank" rel="noopener" aria-label="Telegram"><img src="svg/telegram.svg" alt=""></a>
+      <a class="icon-btn" href="https://wa.me/79026390797" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="svg/whatsapp.svg" alt=""></a>
+      <a class="icon-btn" href="https://vk.com/tabitigroup" target="_blank" rel="noopener" aria-label="ВКонтакте"><img src="svg/vk.svg" alt=""></a>
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="mnav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
-  <input type="checkbox" id="nav-toggle">
-  <nav class="menu">
-    <div class="mhead"><strong>Меню</strong><label for="nav-toggle" style="cursor:pointer">✕ Закрыть</label></div>
-    <a href="#projects" onclick="document.getElementById('nav-toggle').checked=false">Проекты домов</a>
-    <a href="#built" onclick="document.getElementById('nav-toggle').checked=false">Наши реализованные проекты</a>
-    <a href="#services" onclick="document.getElementById('nav-toggle').checked=false">Наши услуги</a>
-    <a href="#contacts" onclick="document.getElementById('nav-toggle').checked=false">Контакты</a>
-  </nav>
+  <div class="mnav" id="mnav" hidden>
+    <button class="mnav__close" id="mnavClose" aria-label="Закрыть меню">× Закрыть</button>
+    <a href="#projects" class="mnav__link">Проекты домов</a>
+    <a href="#built" class="mnav__link">Наши реализованные проекты</a>
+    <a href="#services" class="mnav__link">Услуги</a>
+    <a href="#contacts" class="mnav__link">Контакты</a>
+  </div>
 </header>
 
 <main id="top">
   <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="kicker"><span>В ПЕРМИ И ПЕРМСКОМ КРАЕ</span></div>
-        <p class="slogan"><strong>Лучшее для вашего дома в Перми и Пермском крае</strong></p>
-        <h1>Проектируем и строим современные дома «под ключ»</h1>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#contacts">Рассчитать стоимость</a>
-          <a class="btn" href="#projects">Смотреть проекты</a>
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <p class="eyebrow">Лучшее для вашего дома в Перми и Пермском крае</p>
+        <h1>Проектируем и строим<br>современные дома «под ключ»</h1>
+        <p class="lead">Строительство из автоклавного газобетона. Работаем с ипотекой и маткапиталом. Официальное сопровождение до регистрации в Росреестре.</p>
+        <div class="hero__cta">
+          <a href="#contacts" class="btn btn--primary">Рассчитать стоимость</a>
+          <a href="#projects" class="btn">Смотреть проекты</a>
         </div>
         <div class="stats">
-          <div class="card"><strong>40+</strong><div>домов построено</div></div>
-          <div class="card"><strong>8 лет</strong><div>на рынке</div></div>
+          <div class="stat"><div class="stat__num">40+</div><div class="stat__label">домов построено</div></div>
+          <div class="stat"><div class="stat__num">8 лет</div><div class="stat__label">на рынке</div></div>
         </div>
       </div>
-      <div class="hero-img"><img src="img/hero.jpg" alt="Дом"></div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="container">
-      <div class="section-head">
-        <h2>Популярные проекты домов</h2>
-        <p class="lead">Нажми на фото, чтобы получить коммерческое предложение (PDF)</p>
-      </div>
-      <div class="grid three">
-        <a class="project" href="pdf/kp75.pdf" target="_blank" rel="noopener">
-          <div class="img"><img src="img/proj-75.jpg" alt="Дом 75 м²"></div>
-          <div class="meta"><span>75 м² • 1 этаж</span><span>от 4,4 млн ₽</span></div>
-        </a>
-        <a class="project" href="pdf/kp88.pdf" target="_blank" rel="noopener">
-          <div class="img"><img src="img/proj-86.jpg" alt="Дом 86 м²"></div>
-          <div class="meta"><span>86 м² • 1 этаж</span><span>от 4,6 млн ₽</span></div>
-        </a>
-        <a class="project" href="pdf/kp124.pdf" target="_blank" rel="noopener">
-          <div class="img"><img src="img/proj-124.jpg" alt="Дом 124 м²"></div>
-          <div class="meta"><span>124 м² • 1 этаж</span><span>от 5,5 млн ₽</span></div>
-        </a>
+      <div class="hero__media">
+        <img src="img/home-main-photo.jpg" alt="Современный одноэтажный дом">
       </div>
     </div>
   </section>
 
-  <section id="built" style="background:#f7f9fb">
-    <div class="container">
-      <div class="section-head"><h2>Наши реализованные проекты</h2><p class="lead">Дома, которыми гордимся</p></div>
-      <p class="lead">Здесь будет галерея с вашими фото (как обсуждали ранее).</p>
+  <section id="projects" class="section container">
+    <h2>Популярные проекты домов</h2>
+    <p class="muted">Нажми на фото, чтобы получить коммерческое предложение (PDF)</p>
+    <div class="cards">
+      <a class="card" href="pdf/kp75.pdf" target="_blank" rel="noopener">
+        <img src="img/dom75kv.jpg" alt="Дом 75 м²">
+        <div class="card__bar"><span>75 м² • 1 этаж</span><span>от 4,4 млн ₽</span></div>
+      </a>
+      <a class="card" href="pdf/kp88.pdf" target="_blank" rel="noopener">
+        <img src="img/dom88metrov.jpg" alt="Дом 86 м²">
+        <div class="card__bar"><span>86 м² • 1 этаж</span><span>от 4,6 млн ₽</span></div>
+      </a>
+      <a class="card" href="pdf/kp124.pdf" target="_blank" rel="noopener">
+        <img src="img/dom124mtra.jpg" alt="Дом 124 м²">
+        <div class="card__bar"><span>124 м² • 1 этаж</span><span>от 5,5 млн ₽</span></div>
+      </a>
     </div>
   </section>
 
-  <section id="services">
-    <div class="container">
-      <div class="section-head"><h2>Наши услуги</h2></div>
-      <div class="grid three">
-        <div class="service"><div class="img"><img src="img/srv-project.jpg" alt="Проектирование"></div><div class="meta"><strong>Проектирование</strong></div></div>
-        <div class="service"><div class="img"><img src="img/srv-build.jpg" alt="Строительство"></div><div class="meta"><strong>Строительство</strong></div></div>
-        <div class="service"><div class="img"><img src="img/srv-engineering.jpg" alt="Инженерные системы"></div><div class="meta"><strong>Инженерные системы</strong></div></div>
-        <div class="service"><div class="img"><img src="img/srv-finish.jpg" alt="Отделка и комплектация"></div><div class="meta"><strong>Отделка и комплектация</strong></div></div>
-      </div>
+  <section id="built" class="section container">
+    <h2>Наши реализованные проекты</h2>
+    <div class="gallery">
+      <img src="img/fundament.jpg" alt="Фундамент">
+      <img src="img/home-black-3.jpg" alt="Дом с террасой">
+      <img src="img/home-black-4-comande.jpg" alt="Команда на объекте">
+      <img src="img/dom75kv.jpg" alt="Дом 75">
+      <img src="img/dom88metrov.jpg" alt="Дом 86">
+      <img src="img/dom124mtra.jpg" alt="Дом 124">
+      <img src="img/etap-stroiki.jpg" alt="Этап строительства 1">
+      <img src="img/etap-stroiki-2.jpg" alt="Этап строительства 2">
+      <img src="img/etap-stroiki-3.jpg" alt="Этап строительства 3">
+      <img src="img/etap-stroiki-4.jpg" alt="Этап строительства 4">
     </div>
   </section>
 
-  <section id="contacts" style="background:#f7f9fb">
-    <div class="container">
-      <div class="section-head"><h2>Контакты</h2><p class="lead">Пермь и Пермский край</p></div>
-      <form onsubmit="event.preventDefault(); alert('Заявка отправлена (демо)')">
-        <input required placeholder="Ваше имя">
-        <input required type="tel" placeholder="Телефон">
-        <input required type="email" placeholder="E‑mail">
-        <select required><option selected>Пермь / Пермский край</option><option>Другой</option></select>
-        <textarea placeholder="Кратко опишите задачу"></textarea>
-        <button class="btn btn-primary" type="submit">Отправить заявку</button>
-      </form>
-    </div>
+  <section id="services" class="section container">
+    <h2>Наши услуги</h2>
+    <ul class="bullets">
+      <li>Проектирование</li>
+      <li>Строительство</li>
+      <li>Инженерные системы</li>
+      <li>Отделка и комплектация</li>
+    </ul>
+  </section>
+
+  <section id="contacts" class="section container">
+    <h2>Контакты</h2>
+    <p><strong>Телефон:</strong> <a href="tel:+79026390797">+7 902 639 07 97</a></p>
+    <p><strong>Telegram:</strong> <a href="https://t.me/tabiti_perm" target="_blank" rel="noopener">@tabiti_perm</a></p>
+    <p><strong>VK:</strong> <a href="https://vk.com/tabitigroup" target="_blank" rel="noopener">vk.com/tabitigroup</a></p>
+    <p><strong>E‑mail:</strong> <a href="mailto:aslauta@gmail.com">aslauta@gmail.com</a></p>
   </section>
 </main>
 
-<footer>
-  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-    <div>© 2025</div>
-    <div style="color:#8a95a7">ИП Толстикова Елена Сергеевна • ОГРН 315595800006273 • ИНН 592102562155</div>
+<footer class="footer">
+  <div class="container footer__row">
+    <div>© 2025 ТАБИТИ. ИП Толстикова Елена Сергеевна · ОГРН 315595800006273 · ИНН 592102562155</div>
   </div>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
