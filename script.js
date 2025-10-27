@@ -1,22 +1,37 @@
-// burger menu
-const burger = document.getElementById('burger');
-const offcanvas = document.getElementById('offcanvas');
-const closeMenu = document.getElementById('closeMenu');
-const backdrop = document.getElementById('backdrop');
+// Mobile menu toggle + close on link click
+const menu = document.getElementById('mobileMenu');
+const burger = document.getElementById('hamburger');
+const menuClose = document.getElementById('menuClose');
 
-function openMenu(){ offcanvas.style.translate = '0 0'; backdrop.style.opacity = 1; backdrop.style.pointerEvents='auto'; }
-function close(){ offcanvas.style.translate = '100% 0'; backdrop.style.opacity = 0; backdrop.style.pointerEvents='none'; }
+function openMenu() {
+  menu.classList.add('open');
+  menu.setAttribute('aria-hidden','false');
+  burger.setAttribute('aria-expanded','true');
+}
+function closeMenu() {
+  menu.classList.remove('open');
+  menu.setAttribute('aria-hidden','true');
+  burger.setAttribute('aria-expanded','false');
+}
+burger?.addEventListener('click', () => {
+  if(menu.classList.contains('open')) closeMenu(); else openMenu();
+});
+menuClose?.addEventListener('click', closeMenu);
+menu?.querySelectorAll('[data-close]').forEach(a => a.addEventListener('click', closeMenu));
 
-burger?.addEventListener('click', openMenu);
-closeMenu?.addEventListener('click', close);
-backdrop?.addEventListener('click', close);
+// Clickable house cards -> open PDF
+document.querySelectorAll('.house.clickable').forEach(card => {
+  card.addEventListener('click', () => {
+    const pdf = card.getAttribute('data-pdf');
+    if (pdf) window.open(pdf, '_blank');
+  });
+});
 
-// form submit (simple)
-const form = document.getElementById('leadForm');
-form?.addEventListener('submit', (e)=>{
+// Simple fake form handler
+document.getElementById('leadForm')?.addEventListener('submit', e => {
   e.preventDefault();
-  const data = new FormData(form);
-  if(!document.getElementById('agree').checked){ alert('Нужно согласие на обработку данных'); return; }
-  alert('Спасибо! Заявка отправлена.\nИмя: '+data.get('name')+'\nТелефон: '+data.get('phone')+'\nE‑mail: '+data.get('email'));
-  form.reset();
+  const msg = document.getElementById('formMsg');
+  msg.textContent = 'Заявка отправлена. Свяжемся с вами в ближайшее время.';
+  e.target.reset();
+  document.getElementById('agree').checked = false;
 });
