@@ -1,37 +1,29 @@
-// Mobile menu toggle + close on link click
-const menu = document.getElementById('mobileMenu');
-const burger = document.getElementById('hamburger');
-const menuClose = document.getElementById('menuClose');
+// Drawer menu logic + close on nav click
+const drawer = document.getElementById('mainMenu');
+const openBtn = document.getElementById('menuToggle');
+const closeBtn = document.getElementById('menuClose');
+const links = drawer.querySelectorAll('.menu-link');
 
-function openMenu() {
-  menu.classList.add('open');
-  menu.setAttribute('aria-hidden','false');
-  burger.setAttribute('aria-expanded','true');
-}
-function closeMenu() {
-  menu.classList.remove('open');
-  menu.setAttribute('aria-hidden','true');
-  burger.setAttribute('aria-expanded','false');
-}
-burger?.addEventListener('click', () => {
-  if(menu.classList.contains('open')) closeMenu(); else openMenu();
-});
-menuClose?.addEventListener('click', closeMenu);
-menu?.querySelectorAll('[data-close]').forEach(a => a.addEventListener('click', closeMenu));
+function openDrawer(){ drawer.classList.add('open'); openBtn.setAttribute('aria-expanded','true'); drawer.setAttribute('aria-hidden','false'); }
+function closeDrawer(){ drawer.classList.remove('open'); openBtn.setAttribute('aria-expanded','false'); drawer.setAttribute('aria-hidden','true'); }
+openBtn.addEventListener('click', ()=> drawer.classList.contains('open') ? closeDrawer() : openDrawer());
+closeBtn.addEventListener('click', closeDrawer);
+links.forEach(a => a.addEventListener('click', closeDrawer));
 
-// Clickable house cards -> open PDF
-document.querySelectorAll('.house.clickable').forEach(card => {
-  card.addEventListener('click', () => {
-    const pdf = card.getAttribute('data-pdf');
-    if (pdf) window.open(pdf, '_blank');
+// Quote form (client-side only mock)
+const form = document.getElementById('quoteForm');
+if(form){
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const msg = document.getElementById('formMsg');
+    const agree = document.getElementById('agree');
+    if(!agree.checked){
+      msg.textContent = 'Поставьте галочку на согласие с обработкой персональных данных.';
+      msg.style.color = '#ff6b6b';
+      return;
+    }
+    msg.textContent = 'Заявка отправлена. Свяжемся с вами в ближайшее время.';
+    msg.style.color = '#b3ff00';
+    form.reset();
   });
-});
-
-// Simple fake form handler
-document.getElementById('leadForm')?.addEventListener('submit', e => {
-  e.preventDefault();
-  const msg = document.getElementById('formMsg');
-  msg.textContent = 'Заявка отправлена. Свяжемся с вами в ближайшее время.';
-  e.target.reset();
-  document.getElementById('agree').checked = false;
-});
+}
