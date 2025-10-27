@@ -1,197 +1,169 @@
+
 <!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ТАБИТИ — Проектируем и строим современные дома «под ключ» в Перми и Пермском крае</title>
-  <meta name="description" content="ТАБИТИ: строительство домов из автоклавного газобетона под ключ в Перми и Пермском крае. Проекты, портфолио, контакты. Рассчитаем стоимость и подготовим КП.">
-  <link rel="preload" href="assets/img/tabiti-logotip-bezteksta.jpg" as="image">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Строительство из автоклавного газобетона в Перми и Пермском крае. Проектирование, фундаменты, крыши, инженерия, отделка. 8 лет на рынке, 40+ домов.">
+  <link rel="preload" href="assets/css/styles.css" as="style">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="container header-row">
-      <a class="brand" href="#top" title="На главную">
-        <img src="assets/img/tabiti-logotip-bezteksta.jpg" alt="ТАБИТИ" />
-      </a>
-
-      <nav class="header-actions">
-        <a class="icon-btn" aria-label="Позвонить" href="tel:+79026390797"><img src="assets/icons/phone.svg" alt=""></a>
-        <a class="icon-btn" aria-label="Открыть Telegram" href="https://t.me/tabitigroup" target="_blank" rel="noopener"><img src="assets/icons/telegram.svg" alt=""></a>
-        <a class="icon-btn" aria-label="WhatsApp" href="https://wa.me/79026390797" target="_blank" rel="noopener"><img src="assets/icons/whatsapp.svg" alt=""></a>
-        <a class="icon-btn" aria-label="Группа ВК" href="https://vk.com/tabitigroup" target="_blank" rel="noopener"><img src="assets/icons/vk.svg" alt=""></a>
-        <button id="menuToggle" class="hamburger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mainMenu">
-          <span></span><span></span><span></span>
-        </button>
-      </nav>
-    </div>
-
-    <nav id="mainMenu" class="drawer" aria-hidden="true">
+    <a href="#top" class="brand">
+      <img src="assets/img/home-main-photo.jpg" alt="TABITI логотип" class="logo" />
+      <span class="sr-only">TABITI</span>
+    </a>
+    <nav class="top-actions">
+      <a class="icon-btn" href="tel:+79026390797" aria-label="Позвонить"><img src="assets/svg/phone.svg" alt=""></a>
+      <a class="icon-btn" href="https://t.me/tabitigroup" target="_blank" rel="noopener" aria-label="Telegram"><img src="assets/svg/tg.svg" alt=""></a>
+      <a class="icon-btn" href="https://wa.me/79026390797" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="assets/svg/wa.svg" alt=""></a>
+      <a class="icon-btn" href="https://vk.com/tabitigroup" target="_blank" rel="noopener" aria-label="ВКонтакте"><img src="assets/svg/vk.svg" alt=""></a>
+      <button id="menuToggle" class="icon-btn burger" aria-label="Открыть меню"><img src="assets/svg/menu.svg" alt=""></button>
+    </nav>
+    <aside id="drawer" class="drawer" aria-hidden="true">
       <div class="drawer-head">
-        <span>Меню</span>
-        <button id="menuClose" class="drawer-close" aria-label="Закрыть">✕</button>
+        <strong>Меню</strong>
+        <button id="menuClose" class="icon-btn" aria-label="Закрыть меню"><img src="assets/svg/close.svg" alt=""></button>
       </div>
       <ul class="drawer-nav">
-        <li><a href="#top" class="menu-link">Главная</a></li>
-        <li><a href="#projects" class="menu-link">Проекты домов</a></li>
-        <li><a href="#portfolio" class="menu-link">Портфолио</a></li>
-        <li><a href="#about" class="menu-link">О компании</a></li>
-        <li><a href="#contacts" class="menu-link">Контакты</a></li>
+        <li><a href="#top" class="navlink">Главная</a></li>
+        <li><a href="#projects" class="navlink">Проекты домов</a></li>
+        <li><a href="#gallery" class="navlink">Портфолио</a></li>
+        <li><a href="#about" class="navlink">О компании</a></li>
+        <li><a href="#contact" class="navlink">Контакты</a></li>
       </ul>
-    </nav>
+    </aside>
   </header>
 
-  <!-- GRADIENT HERO from white -> cream -> grey -->
   <main id="top">
-    <section class="hero gradient-hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <h1>Проектируем и строим современные дома «под ключ»</h1>
-          <p class="sublead">Строительство из автоклавного газобетона. Работаем с ипотекой и маткапиталом. Официальное сопровождение до регистрации в Росреестре.</p>
-
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#quote">Рассчитать стоимость</a>
-            <a class="btn btn-ghost" href="#projects">Смотреть проекты</a>
-          </div>
-
-          <div class="stats">
-            <div class="stat-card"><div class="stat-value">40+</div><div class="stat-label">домов построено</div></div>
-            <div class="stat-card"><div class="stat-value">8 лет</div><div class="stat-label">на рынке</div></div>
-          </div>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Проектируем и строим современные дома «под ключ»</h1>
+        <p class="sub">Строительство из автоклавного газобетона. Работаем с ипотекой и маткапиталом. Официальное сопровождение до регистрации в Росреестре.</p>
+        <div class="cta">
+          <a href="#estimate" class="btn btn-primary">Рассчитать стоимость</a>
+          <a href="#projects" class="btn btn-ghost">Смотреть проекты</a>
         </div>
-
-        <div class="hero-media">
-          <figure class="photo-card">
-            <img src="assets/img/home-main-photo.jpg" alt="Наш готовый дом">
-          </figure>
+        <div class="stats">
+          <div class="stat"><div class="num">40+</div><div class="label">домов построено</div></div>
+          <div class="stat"><div class="num">8 лет</div><div class="label">на рынке</div></div>
         </div>
+      </div>
+      <figure class="hero-media">
+        <img src="assets/img/home-black-3.jpg" alt="Современный одноэтажный дом">
+      </figure>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2>Популярные проекты домов</h2>
+      <p class="hint">Нажми на фото, чтобы получить коммерческое предложение (PDF).</p>
+      <div class="cards">
+        <article class="card">
+          <img src="assets/img/dom75kv.jpg" alt="Дом 75 м²">
+          <footer><span>75 м² • 1 этаж</span><a class="price" href="kp75.pdf" download>от 4,4 млн ₽</a></footer>
+        </article>
+        <article class="card">
+          <img src="assets/img/dom88metrov.jpg" alt="Дом 86 м²">
+          <footer><span>86 м² • 1 этаж</span><a class="price" href="kp88.pdf" download>от 4,6 млн ₽</a></footer>
+        </article>
+        <article class="card">
+          <img src="assets/img/dom124mtra.jpg" alt="Дом 124 м² у реки">
+          <footer><span>124 м² • 1 этаж</span><a class="price" href="kp124.pdf" download>от 5,5 млн ₽</a></footer>
+        </article>
       </div>
     </section>
 
-    <!-- POPULAR PROJECTS -->
-    <section id="projects" class="section dark-1">
-      <div class="container">
-        <h2>Популярные проекты домов</h2>
-        <p class="hint">Нажми на фото, чтобы получить коммерческое предложение (PDF).</p>
-
-        <div class="cards-3">
-          <a class="project-card" href="assets/pdf/kp75.pdf" target="_blank">
-            <img src="assets/img/dom75kv.jpg" alt="Дом 75 м²">
-            <div class="project-bar"><span>75 м² · 1 этаж</span><span>от 4,4 млн ₽</span></div>
-          </a>
-
-          <a class="project-card" href="assets/pdf/kp88.pdf" target="_blank">
-            <img src="assets/img/dom88metrov.jpg" alt="Дом 86-88 м²">
-            <div class="project-bar"><span>86 м² · 1 этаж</span><span>от 4,6 млн ₽</span></div>
-          </a>
-
-          <a class="project-card" href="assets/pdf/kp124.pdf" target="_blank">
-            <img src="assets/img/dom124mtra.jpg" alt="Дом 124 м²">
-            <div class="project-bar"><span>124 м² · 1 этаж</span><span>от 5,5 млн ₽</span></div>
-          </a>
-        </div>
+    <section id="gallery" class="gallery">
+      <h2>Наши реализованные проекты</h2>
+      <div class="grid">
+        <img src="assets/img/etap-stroiki.jpg" alt="Этапы строительства">
+        <img src="assets/img/fundament.jpg" alt="Фундамент">
+        <img src="assets/img/etap-stroiki-2.jpg" alt="Кладка">
+        <img src="assets/img/etap-stroiki-3.jpg" alt="Кровля">
+        <img src="assets/img/etap-stroiki-4.jpg" alt="Фасад">
+        <img src="assets/img/home-black-4-comande.jpg" alt="Команда">
       </div>
     </section>
 
-    <!-- PORTFOLIO / GALLERY -->
-    <section id="portfolio" class="section dark-2">
-      <div class="container">
-        <h2>Наши реализованные проекты</h2>
-        <p class="subhint">Дома, которыми гордимся</p>
-
-        <div class="gallery">
-          <img src="assets/img/home-black-3.jpg" alt="Фасад, терраса">
-          <img src="assets/img/home-black-4-comande.jpg" alt="Команда на объекте">
-          <img src="assets/img/fundament.jpg" alt="Фундамент">
-          <img src="assets/img/etap-stroiki.jpg" alt="Этапы строительства 1">
-          <img src="assets/img/etap-stroiki-2.jpg" alt="Этапы строительства 2">
-          <img src="assets/img/etap-stroiki-3.jpg" alt="Этапы строительства 3">
-          <img src="assets/img/etap-stroiki-4.jpg" alt="Этапы строительства 4">
-          <img src="assets/img/dom75kv.jpg" alt="Дом 75">
-          <img src="assets/img/dom88metrov.jpg" alt="Дом 86">
-          <img src="assets/img/dom124mtra.jpg" alt="Дом 124">
-        </div>
+    <section id="services" class="services">
+      <h2>Наши услуги</h2>
+      <p class="lead">От проектирования до инженерии — всё у одного подрядчика.</p>
+      <div class="service-cards">
+        <article class="srv">
+          <img src="assets/img/document.jpg" alt="Проектная документация">
+          <h3>Проектирование</h3>
+          <p>Рабочая документация, сметы, согласования.</p>
+        </article>
+        <article class="srv">
+          <img src="assets/img/home-black-3.jpg" alt="Строительство">
+          <h3>Строительство</h3>
+          <p>Газобетон, фундаменты, перекрытия и кровля.</p>
+        </article>
+        <article class="srv">
+          <img src="assets/img/fundament.jpg" alt="Инженерные системы">
+          <h3>Инженерные системы</h3>
+          <p>Отопление, вентиляция, водоснабжение, электрика.</p>
+        </article>
+        <article class="srv">
+          <img src="assets/img/otdelka-kyhnya.jpg" alt="Отделка">
+          <h3>Отделка и комплектация</h3>
+          <p>Чистовая отделка и комплектация под ключ.</p>
+        </article>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="section dark-3">
-      <div class="container">
-        <h2>Наши услуги</h2>
-        <p class="subhint">От проектирования до инженерии — всё у одного подрядчика.</p>
-        <div class="cards-4">
-          <article class="service-card">
-            <img src="assets/img/document.jpg" alt="Проектная документация">
-            <h3>Проектирование</h3>
-            <p>Рабочая документация, сметы, согласования.</p>
-          </article>
-          <article class="service-card">
-            <img src="assets/img/home-black-3.jpg" alt="Строительство домов">
-            <h3>Строительство</h3>
-            <p>Газобетон, фундаменты, перекрытия и кровля.</p>
-          </article>
-          <article class="service-card">
-            <img src="assets/img/fundament.jpg" alt="Инженерные системы">
-            <h3>Инженерные системы</h3>
-            <p>Отопление, вентиляция, водоснабжение, электрика.</p>
-          </article>
-          <article class="service-card">
-            <img src="assets/img/otdelka-kyhnya.jpg" alt="Чистовая отделка">
-            <h3>Отделка и комплектация</h3>
-            <p>Чистовая отделка и комплектация под ключ.</p>
-          </article>
+    <section id="about" class="about">
+      <div class="about-card">
+        <img src="assets/img/home-black-4-comande.jpg" alt="Команда Табити" class="owner">
+        <div class="about-text">
+          <h2>О компании</h2>
+          <p>ТАБИТИ — надёжный подрядчик в Перми и Пермском крае. Работаем прозрачно: фиксированные сметы, поэтапные акты, фотоотчёты и гарантия на работы.</p>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section dark-4">
-      <div class="container">
-        <h2>О компании</h2>
-        <p>ТАБИТИ — надёжный подрядчик в Перми и Пермском крае. Работаем прозрачно: фиксированные сметы, поэтапные акты, фотоотчёты и гарантия на работы.</p>
-      </div>
-    </section>
-
-    <!-- QUOTE + CONTACTS -->
-    <section id="quote" class="section darkest">
-      <div class="container two-col">
-        <form class="quote-form" id="quoteForm">
-          <h2>Оставить заявку</h2>
+    <section id="contact" class="contact-wrap">
+      <div class="form-card">
+        <h2>Оставить заявку</h2>
+        <form id="leadForm" novalidate>
           <label>Ваше имя
-            <input type="text" name="name" placeholder="Иван" required>
+            <input required type="text" name="name" placeholder="Иван">
           </label>
           <label>E-mail
-            <input type="email" name="email" placeholder="tabiti.perm@gmail.com" required>
+            <input required type="email" name="email" placeholder="tabiti.perm@gmail.com">
           </label>
           <label>Телефон
-            <input type="tel" name="phone" placeholder="+7 ___ ___-__-__" required>
+            <input required type="tel" name="phone" inputmode="tel" placeholder="+7 ___ ___-__-__">
           </label>
-          <label class="policy">
-            <input type="checkbox" id="agree" required>
+          <label class="agree">
+            <input type="checkbox" required>
             <span>Нажимая кнопку, соглашаетесь с обработкой персональных данных.</span>
           </label>
           <button type="submit" class="btn btn-primary wide">Отправить заявку</button>
-          <p id="formMsg" class="form-msg" aria-live="polite"></p>
+          <p id="formMsg" class="hidden">Заявка отправлена. Свяжемся в ближайшее время.</p>
         </form>
-
-        <aside class="contacts" id="contacts">
-          <h3>Контакты</h3>
-          <p><strong>Тел:</strong> <a href="tel:+79026390797">+7 902 639 07 97</a></p>
-          <p><strong>E-mail:</strong> <a href="mailto:tabiti.perm@gmail.com">tabiti.perm@gmail.com</a></p>
-          <p><strong>ТГ:</strong> <a href="https://t.me/tabitigroup" target="_blank" rel="noopener">@tabitigroup</a></p>
-          <p><strong>ВК:</strong> <a href="https://vk.com/tabitigroup" target="_blank" rel="noopener">@tabitigroup</a></p>
-        </aside>
       </div>
+      <aside class="contact-card">
+        <h3>Контакты</h3>
+        <ul>
+          <li><strong>Тел:</strong> <a href="tel:+79026390797">+7 902 639 07 97</a></li>
+          <li><strong>E-mail:</strong> <a href="mailto:tabiti.perm@gmail.com">tabiti.perm@gmail.com</a></li>
+          <li><strong>ТГ:</strong> <a href="https://t.me/tabitigroup" target="_blank" rel="noopener">@tabitigroup</a></li>
+          <li><strong>ВК:</strong> <a href="https://vk.com/tabitigroup" target="_blank" rel="noopener">@tabitigroup</a></li>
+        </ul>
+      </aside>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-row">
-      <div>© 2025 ТАБИТИ. ИП Толстикова Елена Сергеевна · ОГРН 315595800006273 · ИНН 592102562155</div>
-      <div>Пермь и Пермский край</div>
+    <div class="inner">
+      <small>© 2025 ТАБИТИ. ИП Толстикова Елена Сергеевна • ОГРН 315595800006273 • ИНН 592102562155</small>
+      <small>Пермь и Пермский край</small>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
